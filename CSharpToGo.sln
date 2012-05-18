@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpToGo.Core.Android", "CSharpToGo.Core.Android\CSharpToGo.Core.Android.csproj", "{BA626432-F4D4-499F-85BF-5C089BFB641F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpToGo.App.Android", "CSharpToGo.App.Android\CSharpToGo.App.Android.csproj", "{BEF88A08-9E19-45C4-B676-89902A22CC56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA626432-F4D4-499F-85BF-5C089BFB641F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA626432-F4D4-499F-85BF-5C089BFB641F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA626432-F4D4-499F-85BF-5C089BFB641F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA626432-F4D4-499F-85BF-5C089BFB641F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEF88A08-9E19-45C4-B676-89902A22CC56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEF88A08-9E19-45C4-B676-89902A22CC56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEF88A08-9E19-45C4-B676-89902A22CC56}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BEF88A08-9E19-45C4-B676-89902A22CC56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEF88A08-9E19-45C4-B676-89902A22CC56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEF88A08-9E19-45C4-B676-89902A22CC56}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

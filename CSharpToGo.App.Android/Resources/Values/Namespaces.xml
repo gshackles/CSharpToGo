@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string-array name="Namespaces">
+        <item>Microsoft.Win32.SafeHandles</item>
+        <item>System</item>
+        <item>System.Collections</item>
+        <item>System.Collections.Concurrent</item>
+        <item>System.Collections.Generic</item>
+        <item>System.Collections.ObjectModel</item>
+        <item>System.Configuration.Assemblies</item>
+        <item>System.Deployment.Internal</item>
+        <item>System.Diagnostics</item>
+        <item>System.Diagnostics.CodeAnalysis</item>
+        <item>System.Diagnostics.Contracts</item>
+        <item>System.Diagnostics.SymbolStore</item>
+        <item>System.Globalization</item>
+        <item>System.IO</item>
+        <item>System.IO.IsolatedStorage</item>
+        <item>System.Linq</item>
+        <item>System.Linq.Expressions</item>
+        <item>System.Reflection</item>
+        <item>System.Reflection.Emit</item>
+        <item>System.Resources</item>
+        <item>System.Runtime</item>
+        <item>System.Runtime.CompilerServices</item>
+        <item>System.Runtime.ConstrainedExecution</item>
+        <item>System.Runtime.Hosting</item>
+        <item>System.Runtime.InteropServices</item>
+        <item>System.Runtime.InteropServices.ComTypes</item>
+        <item>System.Runtime.InteropServices.Expando</item>
+        <item>System.Runtime.Remoting</item>
+        <item>System.Runtime.Remoting.Activation</item>
+        <item>System.Runtime.Remoting.Channels</item>
+        <item>System.Runtime.Remoting.Contexts</item>
+        <item>System.Runtime.Remoting.Lifetime</item>
+        <item>System.Runtime.Remoting.Messaging</item>
+        <item>System.Runtime.Remoting.Metadata</item>
+        <item>System.Runtime.Remoting.Metadata.W3cXsd2001</item>
+        <item>System.Runtime.Remoting.Proxies</item>
+        <item>System.Runtime.Remoting.Services</item>
+        <item>System.Runtime.Serialization</item>
+        <item>System.Runtime.Serialization.Formatters</item>
+        <item>System.Runtime.Serialization.Formatters.Binary</item>
+        <item>System.Runtime.Versioning</item>
+        <item>System.Security</item>
+        <item>System.Security.AccessControl</item>
+        <item>System.Security.Cryptography</item>
+        <item>System.Security.Cryptography.X509Certificates</item>
+        <item>System.Security.Permissions</item>
+        <item>System.Security.Policy</item>
+        <item>System.Security.Principal</item>
+        <item>System.Text</item>
+        <item>System.Threading</item>
+        <item>System.Threading.Tasks</item>
+    </string-array>
+</resources>

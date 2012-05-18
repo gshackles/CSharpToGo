@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <style name="ApplicationTheme" parent="android:Theme.Light">
+        <item name="android:windowTitleBackgroundStyle">@style/WindowTitleBackground</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <style name="WindowTitleBackground">
+        <item name="android:background">@color/WindowTitleBackground</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">2dip</item>
+    </style>
+
+    <style name="ExecutionHistoryList" parent="@android:style/Widget.ListView">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:cacheColorHint">@color/white</item>
+        <item name="android:listSelector">@drawable/executionhistorylistselector</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="ResultItem">
+        <item name="android:padding">10sp</item>
+    </style>
+
+    <style name="ExecutionResultInput">
+        <item name="android:textSize">20dip</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ExecutionResultOutput">
+        <item name="android:textSize">15dip</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="CodeCompletionInput">
+        <item name="android:hint">@string/InputHint</item>
+        <item name="android:dropDownSelector">@drawable/codecompletionitembackgroundselector</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="RunButton">
+        <item name="android:background">@null</item>
+        <item name="android:padding">5dip</item>
+    </style>
+
+    <style name="Message">
+        <item name="android:paddingLeft">5dip</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="ErrorMessage" parent="Message">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="WarningMessage" parent="Message">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ConsoleOutput" parent="Message">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    
+    <style name="MessageContainer">
+        <item name="android:paddingTop">5dip</item>
+    </style>
+
+    <style name="MessageIcon">
+        <item name="android:paddingTop">5dip</item>
+    </style>
+
+    <style name="InputContainer">
+        <item name="android:padding">6dip</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="InputOuterContainer">
+        <item name="android:paddingTop">2dip</item>
+        <item name="android:background">#CCCCCC</item>
+    </style>
+    
+    <style name="NamespaceList" parent="@android:style/Widget.ListView">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:cacheColorHint">@color/white</item>
+    </style>
+
+    <style name="NamespaceOption">
+        <item name="android:padding">5sp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="PreferencesTheme" parent="@android:style/Theme.Light">
+        <item name="android:windowTitleBackgroundStyle">@style/WindowTitleBackground</item>
+    </style>
+
+    <style name="TimeoutPreferenceLabel">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingBottom">3dip</item>
+    </style>
+</resources>

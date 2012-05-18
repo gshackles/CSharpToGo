@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/executionhistorylistselectorpressed"
+        android:state_pressed="true"/>
+    <item
+        android:drawable="@drawable/executionhistorylistselectorselected"
+        android:state_selected="true"
+        android:state_focused="false"
+        android:state_pressed="false"/>
+</selector>

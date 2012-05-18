@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red">#ff0000</color>
+    <color name="yellow">#eeee00</color>
+    <color name="offwhite">#fffff0</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="blue">#0000ff</color>
+
+    <color name="codecompletion_highlight">#ff3399ff</color>
+    <color name="WindowTitleBackground">#385a84</color>
+</resources>

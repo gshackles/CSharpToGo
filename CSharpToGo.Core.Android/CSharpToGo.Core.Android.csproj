@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BA626432-F4D4-499F-85BF-5C089BFB641F}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSharpInterpreter.Core.Android</RootNamespace>
+    <AssemblyName>CSharpInterpreter.Core.Android</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.CSharp.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CSharpToGo.Core\Compiler\ExecutionResult.cs">
+      <Link>Compiler\ExecutionResult.cs</Link>
+    </Compile>
+    <Compile Include="..\CSharpToGo.Core\Compiler\Printer.cs">
+      <Link>Compiler\Printer.cs</Link>
+    </Compile>
+    <Compile Include="..\CSharpToGo.Core\Compiler\Runner.cs">
+      <Link>Compiler\Runner.cs</Link>
+    </Compile>
+    <Compile Include="..\CSharpToGo.Core\Compiler\RunnerOptions.cs">
+      <Link>Compiler\RunnerOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\CSharpToGo.Core\Compiler\Variable.cs">
+      <Link>Compiler\Variable.cs</Link>
+    </Compile>
+    <Compile Include="..\CSharpToGo.Core\Libraries\TinyMessenger.cs">
+      <Link>Libraries\TinyMessenger.cs</Link>
+    </Compile>
+    <Compile Include="..\CSharpToGo.Core\Messaging\MessageHub.cs">
+      <Link>Messaging\MessageHub.cs</Link>
+    </Compile>
+    <Compile Include="..\CSharpToGo.Core\Messaging\Messages\AddNamespaceMessage.cs">
+      <Link>Messaging\Messages\AddNamespaceMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\CSharpToGo.Core\Messaging\Messages\ExecuteCodeMessage.cs">
+      <Link>Messaging\Messages\ExecuteCodeMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\CSharpToGo.Core\Messaging\Messages\MessageLongClickedMessage.cs">
+      <Link>Messaging\Messages\MessageLongClickedMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\CSharpToGo.Core\Messaging\Messages\ResultInputSelectedMessage.cs">
+      <Link>Messaging\Messages\ResultInputSelectedMessage.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="References\Mono.CSharp.Android.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="7f993410-560b-487a-8531-44fa97ad946b" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

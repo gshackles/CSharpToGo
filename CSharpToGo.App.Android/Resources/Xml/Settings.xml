@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:csharp="http://schemas.android.com/apk/res/com.gregshackles.csharptogo">
+    <csharptogo.app.android.views.SeekBarPreference
+        android:key="timeout"
+        android:title="@string/Settings_TimeoutTitle"
+        android:summary="@string/Settings_TimeoutSummary"
+        csharp:defaultValue="30"
+        csharp:suffix="@string/Settings_TimeoutSuffix"
+        csharp:maxValue="120"
+        csharp:minValue="5"/>
+    <CheckBoxPreference
+        android:key="SaveNamespaces"
+        android:title="@string/Settings_SaveNamespacesTitle"
+        android:summary="@string/Settings_SaveNamespacesSummary" />
+</PreferenceScreen>

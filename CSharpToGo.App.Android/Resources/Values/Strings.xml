@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ApplicationName">C# To Go</string>
+    <string name="UpdateNamespacesActivityLabel">Namespaces</string>
+    <string name="SettingsLabel">Settings</string>
+
+    <string name="InputHint">Type in some C#</string>
+
+    <string name="NoOutput">No output</string>
+
+    <string name="RunningCodeProgressTitle">Running Code</string>
+    <string name="RunningCodeProgressText">Please wait...</string>
+
+    <string name="ClearSessionProgressTitle">Clearing Session</string>
+    <string name="ClearSessionProgressText">Please wait...</string>
+
+    <string name="OptionsMenu_Clear">Clear Session</string>
+    <string name="OptionsMenu_Namespaces">Namespaces</string>
+    <string name="OptionsMenu_Variables">Variables</string>
+    <string name="OptionsMenu_Settings">Settings</string>
+    <string name="OptionsMenu_About">About</string>
+
+    <string name="VariablesDialogTitle">Current Variables</string>
+    <string name="NoVariables">There are no variables declared yet</string>
+
+    <string name="CopyMessage">Copy message text</string>
+    <string name="SearchForMessage">Research this message</string>
+
+    <string name="TimeoutMessage">Timeout occurred</string>
+    <string name="UsingMessage">Use the Namespaces menu option to import namespaces</string>
+    <string name="ClassMessage">Class declarations are not currently supported</string>
+
+    <string name="Settings_TimeoutTitle">Execution Timeout</string>
+    <string name="Settings_TimeoutSummary">Time to wait for code to finish executing</string>
+    <string name="Settings_TimeoutSuffix">seconds</string>
+    <string name="Settings_SaveNamespacesTitle">Remember Namespaces</string>
+    <string name="Settings_SaveNamespacesSummary">Save your namespace selections across sessions</string>
+
+    <string name="AboutTitle">About</string>
+    <string name="AboutOkButton">Ok</string>
+    <string name="AboutContent">C# To Go\nVersion: {0} \n\nGreg Shackles\ngreg@gregshackles.com\nhttp://gregshackles.com\n\nThe compiler in this app uses Mono\'s awesome C# compiler service. For more information about Mono, visit http://mono-project.com</string>
+
+    <string name="RemoveNamespaceMessageTitle">Why can\'t I remove this?</string>
+    <string name="RemoveNamespaceMessageContent">C# has no concept of removing a using statement. You can reset your session to start over.</string>
+    <string name="RemoveNamespaceMessageOkButton">Ok</string>
+</resources>
