@@ -20,7 +20,7 @@
     <AndroidStoreUncompressedFileExtensions />
     <TargetFrameworkVersion>v2.2</TargetFrameworkVersion>
     <MandroidI18n />
-    <DeployExternal>false</DeployExternal>
+    <DeployExternal>False</DeployExternal>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,7 +42,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
-    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkMode>Full</AndroidLinkMode>
+    <AndroidLinkSkip>mscorlib;System;System.Core;System.Xml;System.Xml.Linq;Mono.Security;Mono.CSharp.Android</AndroidLinkSkip>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <ItemGroup>
@@ -162,8 +163,12 @@
     <AndroidResource Include="Resources\Menu\MessageContextMenu.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Properties\AndroidManifest.xml" />
-    <AndroidResource Include="Resources\Values\Strings.xml" />
+    <Content Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <AndroidResource Include="Resources\Values\Strings.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\Drawable-hdpi\ic_menu_info_details.png" />
     <AndroidResource Include="Resources\Drawable-ldpi\ic_menu_info_details.png" />
     <AndroidResource Include="Resources\Drawable-mdpi\ic_menu_info_details.png" />
