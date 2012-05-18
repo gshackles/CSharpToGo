@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/Clear"
+          android:title="@string/OptionsMenu_Clear"
+          android:icon="@drawable/ic_menu_revert"/>
+    <item android:id="@+id/Namespaces"
+          android:title="@string/OptionsMenu_Namespaces"
+          android:icon="@drawable/ic_menu_add"/>
+    <item android:id="@+id/Variables"
+          android:title="@string/OptionsMenu_Variables"
+          android:icon="@drawable/ic_menu_set_as"/>
+    <item android:id="@+id/Settings"
+          android:title="@string/OptionsMenu_Settings"
+          android:icon="@drawable/ic_menu_preferences"/>
+    <item android:id="@+id/About"
+          android:title="@string/OptionsMenu_About"
+          android:icon="@drawable/ic_menu_info_details" />
+</menu>

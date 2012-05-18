@@ -20,6 +20,7 @@
     <AndroidStoreUncompressedFileExtensions />
     <TargetFrameworkVersion>v2.2</TargetFrameworkVersion>
     <MandroidI18n />
+    <DeployExternal>false</DeployExternal>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,6 +43,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -51,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\SplashActivity.cs" />
+    <Compile Include="ApplicationOptions.cs" />
     <Compile Include="Constants\PreferenceKeys.cs" />
     <Compile Include="Extensions\ViewExtensions.cs" />
     <Compile Include="Activities\MainActivity.cs" />
@@ -61,6 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Activities\SettingsActivity.cs" />
     <Compile Include="Activities\UpdateNamespacesActivity.cs" />
+    <Compile Include="SharedPreferenceChangeListener.cs" />
     <Compile Include="Views\CodeCompletionInput.cs" />
     <Compile Include="Views\SeekBarPreference.cs" />
   </ItemGroup>
@@ -72,7 +78,6 @@
     <AndroidResource Include="Resources\Layout\NamespaceOption.axml" />
     <AndroidResource Include="Resources\Layout\WarningMessageItem.axml" />
     <AndroidResource Include="Resources\Layout\ResultItem.axml" />
-    <AndroidResource Include="Resources\Layout\SplashScreen.axml" />
     <AndroidResource Include="Resources\Layout\UpdateNamespaces.axml" />
     <AndroidResource Include="Resources\Layout\TimeoutDialogPreference.axml">
       <SubType>AndroidResource</SubType>
@@ -157,9 +162,6 @@
     <AndroidResource Include="Resources\Menu\MessageContextMenu.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Menu\OptionsMenu.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\Values\Strings.xml" />
     <AndroidResource Include="Resources\Drawable-hdpi\ic_menu_info_details.png" />
@@ -168,6 +170,8 @@
     <AndroidResource Include="Resources\Drawable-hdpi\Info.png" />
     <AndroidResource Include="Resources\Drawable-ldpi\Info.png" />
     <AndroidResource Include="Resources\Drawable-mdpi\Info.png" />
+    <AndroidResource Include="Resources\Menu\MainMenu.xml" />
+    <AndroidResource Include="Resources\Drawable\Splash.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\CodeCompletionItemBackgroundFocusedSelector.xml" />
@@ -197,7 +201,9 @@
     <AndroidResource Include="Resources\Values\Namespaces.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Values\Styles.xml" />
+    <AndroidResource Include="Resources\Values\Styles.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CSharpToGo.Core.Android\CSharpToGo.Core.Android.csproj">

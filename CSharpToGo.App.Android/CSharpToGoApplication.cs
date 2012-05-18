@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Android.Runtime;
 using CSharpToGo.Core.Compiler;
 using Android.App;
-using Android.Content;
 using Android.Preferences;
-using CSharpToGo.Core.Messaging;
 using CSharpToGo.App.Android.Constants;
-using CSharpToGo.Core.Messaging.Messages;
 
 namespace CSharpToGo.App.Android
 {
@@ -16,15 +14,18 @@ namespace CSharpToGo.App.Android
     {
         private SharedPreferenceChangeListener _preferenceChangeListener;
 
-        public CSharpToGoApplication(IntPtr handle)
-            : base(handle)
+        public static ApplicationOptions Options { get; private set; }
+
+        public CSharpToGoApplication(IntPtr handle, JniHandleOwnership transfer)
+            : base(handle, transfer)
         {
         }
 
         public override void OnCreate()
         {
             base.OnCreate();
-            
+         
+            Options = new ApplicationOptions();
             Runner.Instance.Options.TimeoutMessage = Resources.GetString(Resource.String.TimeoutMessage);
             Runner.Instance.Options.UsingMessage = Resources.GetString(Resource.String.UsingMessage);
             Runner.Instance.Options.ClassMessage = Resources.GetString(Resource.String.ClassMessage);
@@ -40,63 +41,6 @@ namespace CSharpToGo.App.Android
 
                 if (!string.IsNullOrEmpty(namespaces))
                     Runner.Instance.Options.DefaultNamespaces = new List<string>(namespaces.Split(','));
-            }
-        }
-
-        private class SharedPreferenceChangeListener : Java.Lang.Object, ISharedPreferencesOnSharedPreferenceChangeListener
-        {
-            private readonly ISharedPreferences _preferences;
-
-            public SharedPreferenceChangeListener(Context context)
-            {
-                _preferences = PreferenceManager.GetDefaultSharedPreferences(context);
-
-                MessageHub.Instance.Subscribe<AddNamespaceMessage>(msg => addNamespace(msg.Content));
-            }
-
-            public void OnSharedPreferenceChanged(ISharedPreferences sharedPreferences, string key)
-            {
-                switch (key)
-                {
-                    case PreferenceKeys.Timeout:
-                        Runner.Instance.Options.Timeout = sharedPreferences.GetInt(key, Runner.Instance.Options.Timeout);
-                        break;
-                    case PreferenceKeys.SaveNamespaces:
-                        if (!sharedPreferences.GetBoolean(key, false))
-                            resetSavedNamespaces();
-
-                        break;
-                }
-            }
-
-            private void addNamespace(string @namespace)
-            {
-                var currentNamespaces = _preferences
-                                            .GetString(PreferenceKeys.SavedNamespaces, "")
-                                            .Split(',')
-                                            .ToList();
-                currentNamespaces.Add(@namespace);
-
-                _preferences
-                    .Edit()
-                    .PutString(PreferenceKeys.SavedNamespaces, string.Join(",", currentNamespaces.Distinct()))
-                    .Commit();
-
-                if (_preferences.GetBoolean(PreferenceKeys.SaveNamespaces, false))
-                    Runner.Instance.Options.DefaultNamespaces = new List<string>(currentNamespaces);
-            }
-
-            private void resetSavedNamespaces()
-            {
-                Runner.Instance.Options.ResetDefaultNamespaces();
-
-                _preferences
-                    .Edit()
-                    .Remove(PreferenceKeys.SavedNamespaces)
-                    .Commit();
-
-                foreach (var @namespace in Runner.Instance.Options.DefaultNamespaces)
-                    addNamespace(@namespace);
             }
         }
     }

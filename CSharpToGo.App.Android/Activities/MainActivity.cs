@@ -19,7 +19,7 @@ using CSharpToGo.App.Android.Views;
 
 namespace CSharpToGo.App.Android.Activities
 {
-    [Activity(MainLauncher = true, Label = "@string/ApplicationName", Icon = "@drawable/icon", 
+    [Activity(Label = "@string/ApplicationName", 
               ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Keyboard | ConfigChanges.KeyboardHidden)]
     public class MainActivity : Activity
     {
@@ -54,7 +54,7 @@ namespace CSharpToGo.App.Android.Activities
         {
             base.OnCreateOptionsMenu(menu);
 
-            new MenuInflater(this).Inflate(Resource.Menu.OptionsMenu, menu);
+            new MenuInflater(this).Inflate(Resource.Menu.MainMenu, menu);
 
             return true;
         }

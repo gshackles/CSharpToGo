@@ -13,4 +13,14 @@
         android:key="SaveNamespaces"
         android:title="@string/Settings_SaveNamespacesTitle"
         android:summary="@string/Settings_SaveNamespacesSummary" />
+    <CheckBoxPreference
+        android:key="MultiLineEditing"
+        android:defaultValue="true"
+        android:title="@string/Settings_MultiLineEditingTitle"
+        android:summary="@string/Settings_MultiLineEditingSummary" />
+    <CheckBoxPreference
+        android:key="DoubleEnter"
+        android:title="@string/Settings_DoubleEnterTitle"
+        android:summary="@string/Settings_DoubleEnterSummary"
+        android:dependency="MultiLineEditing"/>
 </PreferenceScreen>

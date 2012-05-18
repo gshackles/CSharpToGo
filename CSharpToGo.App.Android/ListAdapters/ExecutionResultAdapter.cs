@@ -105,19 +105,16 @@ namespace CSharpToGo.App.Android.ListAdapters
                 var messageView = _context.LayoutInflater.Inflate(itemResourceId, null);
                 messageView.FindViewById<TextView>(Resource.Id.MessageText).Text = message;
                 
-                messageView.LongClick = onMessageLongClicked;
-
+                messageView.LongClick += onMessageLongClicked;
                 container.AddView(messageView);
             }
         }
 
-        private bool onMessageLongClicked(View view) 
+        private void onMessageLongClicked(object sender, View.LongClickEventArgs e) 
         {
-            string message = view.FindViewById<TextView>(Resource.Id.MessageText).Text;
+            string message = e.V.FindViewById<TextView>(Resource.Id.MessageText).Text;
 
-            MessageHub.Instance.Publish(new MessageLongClickedMessage(view, message));
-
-            return true;
+            MessageHub.Instance.Publish(new MessageLongClickedMessage(e.V, message));
         }
     }
 }

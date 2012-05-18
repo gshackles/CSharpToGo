@@ -17,6 +17,7 @@ namespace CSharpToGo.App.Android.Views
         private string _lastCompletionPrefix;
         private TextWatcher _textWatcher;
         private Thread _completionsThread;
+        private Keycode? _lastKeyPressed;
 
         public CodeCompletionInput(Context context, IAttributeSet attrs)
             : base(context, attrs)
@@ -24,35 +25,44 @@ namespace CSharpToGo.App.Android.Views
             _context = context;
             Threshold = 0;
 
+            _lastKeyPressed = null;
             _textWatcher = new TextWatcher();
             _textWatcher.TextChanged += onTextChanged;
             AddTextChangedListener(_textWatcher);
-            
-            KeyPress = onKeyPress;
+            KeyPress += onKeyPress;
+
+            SetSingleLine(false);
         }
 
-        private bool onKeyPress(View v, int keyCode, KeyEvent e)
+        private void onKeyPress(object sender, KeyEventArgs e)
         {
-            if (e.Action != KeyEventActions.Down) return false;
+            e.Handled = false;
 
-            Keycode code = (Keycode)keyCode;
+            if (e.E.Action != KeyEventActions.Down) return;
 
-            if (code == Keycode.Enter)
+            if (e.E.KeyCode == Keycode.Enter)
             {
                 if (IsPopupShowing && ListSelection != AdapterView.InvalidPosition)
                 {
                     PerformCompletion();
                     DismissDropDown();
-                }
-                else if (!string.IsNullOrWhiteSpace(this.Text))
-                {
-                    MessageHub.Instance.Publish(new ExecuteCodeMessage(this, this.Text));
+
+                    e.Handled = true;
+
+                    return;
                 }
 
-                return true;
+                if (!CSharpToGoApplication.Options.MultiLineEditing
+                    || (CSharpToGoApplication.Options.DoubleEnterToExecute && _lastKeyPressed == Keycode.Enter))
+                {
+                    MessageHub.Instance.Publish(new ExecuteCodeMessage(this, Text));
+
+                    _lastKeyPressed = null;
+                    e.Handled = true;
+                }
             }
 
-            return false;
+            _lastKeyPressed = e.E.KeyCode;
         }
 
         private void onTextChanged(string text)
@@ -61,23 +71,24 @@ namespace CSharpToGo.App.Android.Views
             {
                 if (_completionsThread != null && _completionsThread.IsAlive)
                     _completionsThread.Abort();
-                
-                _completionsThread = new Thread(() =>
-                                        {
-                                            var completions = Runner.Instance.GetCodeCompletions(text);
 
-                                            if (completions != null && completions.Count > 0)
-                                            {
-                                                Handler.Post(() =>
-                                                                 {
-                                                                        Adapter = new ArrayAdapter(_context,
-                                                                                                Resource.Layout.CodeCompletionItem,
-                                                                                                Resource.Id.Completion,
-                                                                                                completions.ToList());
-                                                                        SetText(Text);
-                                                                });
-                                            }
-                                        });
+                _completionsThread =
+                    new Thread(() =>
+                    {
+                        var completions = Runner.Instance.GetCodeCompletions(text);
+
+                        if (completions != null && completions.Count > 0)
+                        {
+                            Handler.Post(() =>
+                            {
+                                Adapter = new ArrayAdapter(_context,
+                                                           Resource.Layout.CodeCompletionItem,
+                                                           Resource.Id.Completion,
+                                                           completions.ToList());
+                                SetText(Text);
+                            });
+                        }
+                    });
 
                 _completionsThread.Start();
                 _lastCompletionPrefix = text;

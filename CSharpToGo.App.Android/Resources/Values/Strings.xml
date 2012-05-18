@@ -35,6 +35,10 @@
     <string name="Settings_TimeoutSuffix">seconds</string>
     <string name="Settings_SaveNamespacesTitle">Remember Namespaces</string>
     <string name="Settings_SaveNamespacesSummary">Save your namespace selections across sessions</string>
+    <string name="Settings_MultiLineEditingTitle">Multi-Line Input</string>
+    <string name="Settings_MultiLineEditingSummary">Pressing enter will insert a new line instead of executing the code.</string>
+    <string name="Settings_DoubleEnterTitle">Double Enter to Run</string>
+    <string name="Settings_DoubleEnterSummary">In multi-line mode, pressing enter twice will execute the code.</string>
 
     <string name="AboutTitle">About</string>
     <string name="AboutOkButton">Ok</string>

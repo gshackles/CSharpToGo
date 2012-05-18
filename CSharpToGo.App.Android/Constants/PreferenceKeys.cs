@@ -10,5 +10,7 @@ namespace CSharpToGo.App.Android.Constants
         public const string SavedNamespaces = "SavedNamespaces";
         public const string ShowRemoveNamespaceMessage = "ShowRemoveNamespaceMessage";
         public const string Timeout = "timeout";
+        public const string MultiLineEditing = "MultiLineEditing";
+        public const string DoubleEnter = "DoubleEnter";
     }
 }
