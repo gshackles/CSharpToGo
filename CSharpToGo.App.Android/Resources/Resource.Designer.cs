@@ -49,6 +49,9 @@ namespace CSharpToGo.App.Android
 		public partial class Color
 		{
 			
+			// aapt resource value: 0x7f050008
+			public const int SyntaxHighlight = 2131034120;
+			
 			// aapt resource value: 0x7f050007
 			public const int WindowTitleBackground = 2131034119;
 			

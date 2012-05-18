@@ -74,7 +74,7 @@ namespace CSharpToGo.App.Android.Activities
                     {
                         _results.Clear();
                         _adapter.NotifyDataSetChanged();
-                        progressDialog.Hide();
+                        progressDialog.Dismiss();
                     }));
 
                     return true;
@@ -128,7 +128,7 @@ namespace CSharpToGo.App.Android.Activities
                 _results.Add(result);
                 _adapter.NotifyDataSetChanged();
                 _input.Text = "";
-                progressDialog.Hide();
+                progressDialog.Dismiss();
 
                 ((InputMethodManager)GetSystemService(InputMethodService))
                     .HideSoftInputFromWindow(_input.WindowToken, HideSoftInputFlags.ImplicitOnly);

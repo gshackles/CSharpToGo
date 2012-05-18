@@ -9,4 +9,5 @@
 
     <color name="codecompletion_highlight">#ff3399ff</color>
     <color name="WindowTitleBackground">#385a84</color>
+    <color name="SyntaxHighlight">#0000ff</color>
 </resources>

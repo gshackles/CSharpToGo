@@ -24,7 +24,7 @@ namespace CSharpToGo.App.Android
         public override void OnCreate()
         {
             base.OnCreate();
-
+            
             Runner.Instance.Options.TimeoutMessage = Resources.GetString(Resource.String.TimeoutMessage);
             Runner.Instance.Options.UsingMessage = Resources.GetString(Resource.String.UsingMessage);
             Runner.Instance.Options.ClassMessage = Resources.GetString(Resource.String.ClassMessage);
