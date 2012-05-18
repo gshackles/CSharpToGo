@@ -38,9 +38,9 @@ namespace CSharpToGo.App.Android.Views
         {
             e.Handled = false;
 
-            if (e.E.Action != KeyEventActions.Down) return;
+            if (e.Event.Action != KeyEventActions.Down) return;
 
-            if (e.E.KeyCode == Keycode.Enter)
+            if (e.Event.KeyCode == Keycode.Enter)
             {
                 if (IsPopupShowing && ListSelection != AdapterView.InvalidPosition)
                 {
@@ -62,7 +62,7 @@ namespace CSharpToGo.App.Android.Views
                 }
             }
 
-            _lastKeyPressed = e.E.KeyCode;
+            _lastKeyPressed = e.Event.KeyCode;
         }
 
         private void onTextChanged(string text)

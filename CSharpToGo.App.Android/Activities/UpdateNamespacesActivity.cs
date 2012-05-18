@@ -36,7 +36,7 @@ namespace CSharpToGo.App.Android.Activities
             _preferences = PreferenceManager.GetDefaultSharedPreferences(this);
         }
         
-        private void namespacesList_ItemClick(object sender, ItemEventArgs e)
+        private void namespacesList_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var option = e.View.FindViewById<CheckedTextView>(Resource.Id.NamespaceOption);
 
